@@ -1,10 +1,12 @@
 #ifndef SNAKE_H
 #define SNAKE_H
+#include <deque>
 using namespace std;
 class Snake{
     private:
         int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         int* mode;
+        deque<int[]> dq;
     public:
         Snake(bool***, int);
         bool moveBody(bool***);
