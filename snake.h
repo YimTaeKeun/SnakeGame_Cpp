@@ -6,6 +6,7 @@ class Snake{
     private:
         int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         int* mode;
+        int board_size;
         deque<int[]> dq;
     public:
         Snake(bool***, int);
