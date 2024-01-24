@@ -1,5 +1,6 @@
 #include "snake.cpp"
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 bool*** board;
 int board_size;
@@ -10,6 +11,13 @@ int main(){
     cin >> board_size;
     Snake mySnake(board, board_size);
     printBoard();
+    bool isContinue = false;
+    do{
+        system("cls");
+        isContinue = mySnake.moveBody(board);
+        printBoard();
+        Sleep(150);
+    }while(isContinue);
     return 0;
 }
 void initiallizeBoard(){
@@ -37,5 +45,6 @@ void printBoard(){
         cout << "-" << endl;
     }
     for(int i = 0; i < board_size + 2; i++) cout << "- ";
+    cout << endl;
 }
 //print ■
