@@ -10,6 +10,9 @@ void initiallizeBoard();
 void inputDirection(Snake&);
 int main(){
     cout << "Input Board Size: ";
+    ios_base :: sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     cin >> board_size;
     Snake mySnake(board, board_size);
     printBoard();
