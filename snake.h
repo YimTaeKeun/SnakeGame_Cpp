@@ -8,6 +8,7 @@ class Snake{
         int* mode;
         int board_size;
         deque<int*> dq;
+        void generateNewApple(bool***&);
     public:
         Snake(bool***&, int);
         bool moveBody(bool***&);
