@@ -7,6 +7,7 @@ class Snake{
         int directions[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         int* mode;
         int board_size;
+        int score = 0;
         deque<int*> dq;
         void generateNewApple(bool***&);
     public:
@@ -14,5 +15,6 @@ class Snake{
         bool moveBody(bool***&);
         //0: 오른쪽, 1: 아래쪽, 2: 왼쪽, 3: 위쪽
         void changeDirection(int);
+        int getScore();
 };
 #endif
