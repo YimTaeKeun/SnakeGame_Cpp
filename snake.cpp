@@ -21,7 +21,7 @@ bool Snake::moveBody(bool***& board){
     int goCol = mode[0], goRow = mode[1];
     int* cal = dq.front();
     int movedCol = cal[0] + goCol, movedRow = cal[1] + goRow;
-    if(movedCol < 0 || movedRow < 0 || movedCol == board_size || movedRow == board_size) return false;
+    if(movedCol < 0 || movedRow < 0 || movedCol == board_size || movedRow == board_size || board[movedCol][movedRow][0]) return false;
     dq.push_front(new int[2] {movedCol, movedRow});
     board[movedCol][movedRow][0] = true;
     if(!board[movedCol][movedRow][1]){
