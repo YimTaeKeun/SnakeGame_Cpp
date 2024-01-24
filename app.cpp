@@ -4,8 +4,15 @@ using namespace std;
 bool*** board;
 int board_size;
 void printBoard();
+void initiallizeBoard(int);
 int main(){
+    cout << "Input Board Size: ";
+    cin >> board_size;
+    initiallizeBoard(board_size);
     return 0;
+}
+void initiallizeBoard(int board_size){
+    
 }
 void printBoard(){
     for(int i = 0; i < board_size + 2; i++) cout << "- ";
