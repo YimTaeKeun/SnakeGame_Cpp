@@ -1,3 +1,4 @@
+#include <conio.h>
 #include "snake.cpp"
 #include <iostream>
 #include <Windows.h>
@@ -6,6 +7,7 @@ bool*** board;
 int board_size;
 void printBoard();
 void initiallizeBoard();
+void inputDirection(Snake&);
 int main(){
     cout << "Input Board Size: ";
     cin >> board_size;
@@ -16,7 +18,8 @@ int main(){
         system("cls");
         isContinue = mySnake.moveBody(board);
         printBoard();
-        Sleep(150);
+        inputDirection(mySnake);
+        Sleep(70);
     }while(isContinue);
     return 0;
 }
@@ -46,5 +49,23 @@ void printBoard(){
     }
     for(int i = 0; i < board_size + 2; i++) cout << "- ";
     cout << endl;
+}
+void inputDirection(Snake& mySnake){
+    if (_kbhit()) {  // 키보드 입력이 있는지 확인
+        switch (_getch()) {  // 키보드 입력 받기 (Windows에서만 동작)
+            case 'a':
+                mySnake.changeDirection(2);
+                break;
+            case 'd':
+                mySnake.changeDirection(0);
+                break;
+            case 'w':
+                mySnake.changeDirection(3);
+                break;
+            case 's':
+                mySnake.changeDirection(1);
+                break;
+        }
+    }
 }
 //print ■
