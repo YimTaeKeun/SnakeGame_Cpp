@@ -41,9 +41,11 @@ void Snake::changeDirection(int modeInt){
 }
 void Snake::generateNewApple(bool***& board){
     srand(time(0));
-    int randomCol = rand() % board_size;
-    int randomRow = rand() % board_size;
-    if(board[randomCol][randomRow][0]) generateNewApple(board);
+    int randomCol = 0, randomRow = 0;
+    do{
+        randomCol = rand() % board_size;
+        randomRow = rand() % board_size;
+    }while(board[randomCol][randomRow][0]);
     board[randomCol][randomRow][1] = true;
 }
 int Snake::getScore(){return score;}
