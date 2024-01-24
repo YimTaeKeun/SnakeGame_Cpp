@@ -19,7 +19,7 @@ int main(){
         isContinue = mySnake.moveBody(board);
         printBoard();
         inputDirection(mySnake);
-        Sleep(70);
+        Sleep(100);
     }while(isContinue);
     return 0;
 }
@@ -43,7 +43,7 @@ void printBoard(){
         for(int j = 0; j < board_size; j++){
             if(board[i][j][0]) cout << "B ";
             else if(board[i][j][1]) cout << "A ";
-            else cout << "* ";
+            else cout << "  ";
         }
         cout << "-" << endl;
     }
