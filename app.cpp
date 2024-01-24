@@ -17,10 +17,15 @@ int main(){
     do{
         system("cls");
         isContinue = mySnake.moveBody(board);
+        cout << "Score:" << mySnake.getScore() << endl << endl;
         printBoard();
         inputDirection(mySnake);
         Sleep(100);
     }while(isContinue);
+    system("cls");
+    cout << "Score:" << mySnake.getScore() << endl << endl;
+    printBoard();
+    _getch();
     return 0;
 }
 void initiallizeBoard(){

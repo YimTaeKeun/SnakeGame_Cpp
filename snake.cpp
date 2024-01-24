@@ -31,6 +31,7 @@ bool Snake::moveBody(bool***& board){
     }
     else{
         board[movedCol][movedRow][1] = false;
+        score++;
         generateNewApple(board);
     }
     return true;
@@ -42,5 +43,7 @@ void Snake::generateNewApple(bool***& board){
     srand(time(0));
     int randomCol = rand() % board_size;
     int randomRow = rand() % board_size;
+    if(board[randomCol][randomRow][0]) generateNewApple(board);
     board[randomCol][randomRow][1] = true;
 }
+int Snake::getScore(){return score;}
