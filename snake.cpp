@@ -1,3 +1,5 @@
+#include <ctime>
+#include <cstdlib>
 #include "snake.h"
 Snake::Snake(bool***& board, int size):board_size(size){
     mode = directions[0];
@@ -11,6 +13,7 @@ Snake::Snake(bool***& board, int size):board_size(size){
         }
     }
     board[0][0][0] = true;
+    generateNewApple(board);
     dq.push_back(new int[2] {0, 0});
 }
 bool Snake::moveBody(bool***& board){
@@ -26,9 +29,18 @@ bool Snake::moveBody(bool***& board){
         dq.pop_back();
         board[tail[0]][tail[1]][0] = false;
     }
-    else board[movedCol][movedRow][1] = false;
+    else{
+        board[movedCol][movedRow][1] = false;
+        generateNewApple(board);
+    }
     return true;
 }
 void Snake::changeDirection(int modeInt){
     mode = directions[modeInt];
+}
+void Snake::generateNewApple(bool***& board){
+    srand(time(0));
+    int randomCol = rand() % board_size;
+    int randomRow = rand() % board_size;
+    board[randomCol][randomRow][1] = true;
 }
