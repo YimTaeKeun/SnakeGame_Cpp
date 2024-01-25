@@ -20,13 +20,13 @@ int main(){
     do{
         system("cls");
         isContinue = mySnake.moveBody(board);
-        cout << "Score:" << mySnake.getScore() << endl << endl;
+        cout << "Score:" << mySnake.getScore() << "\n" << "\n";
         printBoard();
         inputDirection(mySnake);
         Sleep(100);
     }while(isContinue);
     system("cls");
-    cout << "Score:" << mySnake.getScore() << endl << endl;
+    cout << "Score:" << mySnake.getScore() << "\n" << "\n";
     printBoard();
     _getch();
     return 0;
@@ -45,7 +45,7 @@ void initiallizeBoard(){
 }
 void printBoard(){
     for(int i = 0; i < board_size + 2; i++) cout << "- ";
-    cout << endl;
+    cout << "\n";
     for(int i = 0; i < board_size; i++){
         cout << "- ";
         for(int j = 0; j < board_size; j++){
@@ -53,7 +53,7 @@ void printBoard(){
             else if(board[i][j][1]) cout << "A ";
             else cout << "  ";
         }
-        cout << "-" << endl;
+        cout << "-" << "\n";
     }
     for(int i = 0; i < board_size + 2; i++) cout << "- ";
     cout << endl;
