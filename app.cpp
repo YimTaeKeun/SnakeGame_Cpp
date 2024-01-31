@@ -1,5 +1,5 @@
 #include <conio.h>
-#include "snake.cpp"
+#include "snake.h"
 #include <iostream>
 #include <Windows.h>
 using namespace std;
