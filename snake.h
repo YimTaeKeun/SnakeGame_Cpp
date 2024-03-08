@@ -9,7 +9,10 @@ class Snake{
         int board_size;
         int score = 0;
         deque<int*> dq;
+        void generate(int mode, bool***&); // 1: apple, 2: 줄어듦, 3: 장애물
         void generateNewApple(bool***&);
+        void generateNewPoison(bool***&);
+        void generateNewWall(bool***&);
     public:
         Snake(bool***&, int);
         bool moveBody(bool***&);

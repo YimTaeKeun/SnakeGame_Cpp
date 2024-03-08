@@ -23,7 +23,7 @@ int main(){
         cout << "Score:" << mySnake.getScore() << "\n" << "\n";
         printBoard();
         inputDirection(mySnake);
-        Sleep(100);
+        Sleep(80);
     }while(isContinue);
     system("cls");
     cout << "Score:" << mySnake.getScore() << "\n" << "\n";
@@ -51,6 +51,8 @@ void printBoard(){
         for(int j = 0; j < board_size; j++){
             if(board[i][j][0]) cout << "B ";
             else if(board[i][j][1]) cout << "A ";
+            else if(board[i][j][2]) cout << "P ";
+            else if(board[i][j][3]) cout << "| ";
             else cout << "  ";
         }
         cout << "-" << "\n";
